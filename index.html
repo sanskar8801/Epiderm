@@ -1,39 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epiderm – App Coming Soon</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Epiderm — Coming Soon</title>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #f8f8f8;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            color: #222;
+        :root {
+            --bg: #fafafa;
+            --text: #111;
+            --muted: #6b7280;
+            --card: #ffffff;
+            --border: #e5e7eb;
         }
 
-        .container {
-            text-align: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
         h1 {
-            font-size: 42px;
+            font-size: 40px;
             font-weight: 700;
-            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
         }
 
         p {
-            font-size: 18px;
-            opacity: 0.7;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        footer {
+            margin-top: 40px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 450px) {
+            h1 { font-size: 32px; }
+            p { font-size: 15px; }
         }
     </style>
 </head>
@@ -41,8 +77,15 @@
 <body>
     <div class="container">
         <h1>Epiderm</h1>
-        <p>Our app is coming soon. Precision in every pixel.</p>
+
+        <p>
+            AI-powered skin cancer detection designed for early, accurate, 
+            and accessible diagnosis. Precision in every pixel.
+        </p>
+
+        <div class="tag">App Coming Soon</div>
+
+        <footer>© 2025 Epiderm Health AI</footer>
     </div>
 </body>
-
 </html>
