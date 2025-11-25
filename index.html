@@ -1,83 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epiderm – App Coming Soon</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Epiderm — Coming Soon</title>
+
+    <!-- Premium Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                         Ubuntu, Cantarell, "Open Sans", sans-serif;
-            background: linear-gradient(145deg, #eef1ff, #fce9f3, #e7f3ff);
-            background-size: 400% 400%;
-            animation: floatBg 18s ease infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+            /* SKIN-INSPIRED GRADIENT */
+            background: linear-gradient(
+                135deg,
+                #fdf7ed 0%,    /* cream */
+                #f4e3c2 25%,   /* beige */
+                #f8d2b6 55%,   /* peach */
+                #eac3a3 100%   /* warm sand */
+            );
+            background-size: 300% 300%;
+            animation: skinShift 14s ease-in-out infinite;
         }
 
-        @keyframes floatBg {
+        @keyframes skinShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(24px);
+            padding: 42px;
             border-radius: 26px;
-            padding: 48px 40px;
-            width: 88%;
             max-width: 420px;
+            width: 88%;
             text-align: center;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+
+            animation: fadeIn 1.4s ease, floatUp 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-9px); }
+            100% { transform: translateY(0); }
         }
 
         h1 {
-            margin: 0;
-            font-size: 2.2rem;
+            margin: 0 0 15px;
+            font-size: 36px;
             font-weight: 700;
-            color: #1f1f1f;
+            color: #2b2b2b;
         }
 
         p {
-            margin-top: 16px;
-            font-size: 1rem;
+            font-size: 17px;
             line-height: 1.6;
-            color: #5b5b5b;
+            color: #444;
+            margin-bottom: 28px;
+            font-weight: 400;
         }
 
-        .cta {
-            margin-top: 30px;
-        }
+        /* Fade-in Coming Soon button */
+        .btn {
+            opacity: 0;
+            animation: fadeButton 2.2s ease forwards;
+            animation-delay: 1.8s;
 
-        .button {
-            display: inline-block;
-            padding: 14px 34px;
+            padding: 14px 28px;
             background: #ffffff;
-            color: #111;
-            border-radius: 45px;
-            font-size: 1.05rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            color: #222;
             font-weight: 600;
-            text-decoration: none;
-            border: 1px solid #ddd;
+            cursor: default;
+
+            box-shadow: 0 6px 20px rgba(230,164,120,0.28);
             transition: 0.3s;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.07);
         }
 
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+        @keyframes fadeButton {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(230,150,110,0.35);
+        }
+
+        .email {
+            margin-top: 18px;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .email a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         footer {
-            margin-top: 30px;
-            font-size: 0.85rem;
-            color: #777;
+            margin-top: 24px;
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
@@ -87,13 +130,15 @@
         <h1>Epiderm</h1>
 
         <p>
-            AI-powered skin cancer detection designed for early, accurate,
-            and accessible diagnosis. Precision in every pixel.
+            Skin cancer is curable when detected early. Epiderm brings clinical grade AI to your phone to detect lesions, identify patterns and predict stage in seconds with precision in every pixel.
         </p>
 
-        <div class="cta">
-            <a href="#" class="button">App Coming Soon</a>
-        </div>
+        <button class="btn">App Coming Soon</button>
+
+        <p class="email">
+            Contact:
+            <a href="mailto:epiderm.org@gmail.com">epiderm.org@gmail.com</a>
+        </p>
 
         <footer>© 2025 Epiderm Health AI</footer>
     </div>
