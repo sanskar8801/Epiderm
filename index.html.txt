@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Epiderm — Coming Soon</title>
+  <style>
+    body{margin:0;font-family:Arial, sans-serif;background:#111;color:white;text-align:center}
+    .hero{
+      background:url('hero.jpeg') center/cover no-repeat;
+      height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    }
+    h1{font-size:36px;letter-spacing:3px;margin:8px 0}
+    h2{font-size:20px;font-weight:400;opacity:0.9;margin:0}
+    .subtitle{font-size:16px;margin:10px 0 20px;color:#ddd}
+    .cta{
+      background:#6f6865;padding:12px 28px;border-radius:28px;letter-spacing:3px;font-weight:bold;
+      text-transform:uppercase;
+    }
+    footer{
+      background:#6b6561;padding:18px;margin-top:30px;font-size:12px;letter-spacing:1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>EPIDERM</h1>
+    <h2>AI-POWERED SKIN CANCER DETECTION</h2>
+    <div class="subtitle">Precision in every pixel.</div>
+    <div class="cta">Coming Soon</div>
+  </div>
+
+  <footer>
+    © 2025 EPIDERM HEALTH AI. ALL RIGHTS RESERVED.
+  </footer>
+
+</body>
+</html>
