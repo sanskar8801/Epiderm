@@ -6,13 +6,17 @@
     <title>Epiderm — Coming Soon</title>
 
     <!-- Premium Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            padding: 0;
-            height: 100vh;
+            padding: 24px 16px;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,89 +42,237 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.78);
+            background: rgba(255, 255, 255, 0.82);
             backdrop-filter: blur(24px);
-            padding: 42px;
-            border-radius: 26px;
-            max-width: 420px;
-            width: 88%;
+            -webkit-backdrop-filter: blur(24px);
+            padding: 44px 38px;
+            border-radius: 28px;
+            max-width: 440px;
+            width: 100%;
             text-align: center;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
 
-            animation: fadeIn 1.4s ease, floatUp 4s ease-in-out infinite;
+            animation: fadeIn 1.2s ease, floatUp 4s ease-in-out infinite;
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(30px); }
+            0% { opacity: 0; transform: translateY(24px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes floatUp {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-9px); }
+            50% { transform: translateY(-7px); }
             100% { transform: translateY(0); }
         }
 
         h1 {
-            margin: 0 0 15px;
-            font-size: 36px;
+            margin: 0 0 14px;
+            font-size: 38px;
             font-weight: 700;
-            color: #2b2b2b;
+            color: #242424;
+            letter-spacing: -0.5px;
         }
 
-        p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #444;
-            margin-bottom: 28px;
+        p.description {
+            font-size: 16px;
+            line-height: 1.65;
+            color: #4a4a4a;
+            margin: 0 0 26px;
             font-weight: 400;
         }
 
-        /* Fade-in Coming Soon button */
-        .btn {
-            opacity: 0;
-            animation: fadeButton 2.2s ease forwards;
-            animation-delay: 1.8s;
-
-            padding: 14px 28px;
-            background: #ffffff;
-            border: none;
-            border-radius: 50px;
-            font-size: 17px;
-            color: #222;
-            font-weight: 600;
-            cursor: default;
-
-            box-shadow: 0 6px 20px rgba(230,164,120,0.28);
-            transition: 0.3s;
+        /* Seamless Early Access Signup Form */
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 0 0 20px;
+            width: 100%;
+            animation: fadeForm 1.8s ease forwards;
         }
 
-        @keyframes fadeButton {
+        @keyframes fadeForm {
             0% { opacity: 0; transform: translateY(10px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        .signup-input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            font-size: 15px;
+            font-family: inherit;
+            color: #222;
+            outline: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+            text-align: center;
+        }
+
+        .signup-input:focus {
+            border-color: #d89670;
+            background: #ffffff;
+            box-shadow: 0 6px 20px rgba(216, 150, 112, 0.22);
+        }
+
+        .signup-input::placeholder {
+            color: #8c8c8c;
+            font-weight: 400;
+        }
+
+        .checkbox-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13.5px;
+            color: #555;
+            cursor: pointer;
+            user-select: none;
+            margin: 2px 0 4px;
+            transition: color 0.2s ease;
+        }
+
+        .checkbox-container:hover {
+            color: #111;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            accent-color: #222;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px 28px;
+            background: #222222;
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
         .btn:hover {
+            background: #000000;
             transform: translateY(-2px);
-            box-shadow: 0 10px 26px rgba(230,150,110,0.35);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Feedback Notifications */
+        .feedback-msg {
+            font-size: 13.5px;
+            line-height: 1.5;
+            padding: 12px 16px;
+            border-radius: 14px;
+            margin-top: 6px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .feedback-msg.success {
+            color: #14532d;
+            background: rgba(220, 252, 231, 0.95);
+            border: 1px solid rgba(74, 222, 128, 0.4);
+        }
+
+        .feedback-msg.error {
+            color: #7f1d1d;
+            background: rgba(254, 242, 242, 0.95);
+            border: 1px solid rgba(248, 113, 113, 0.4);
+        }
+
+        .footer-links {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
         }
 
         .email {
-            margin-top: 18px;
-            font-size: 15px;
+            margin: 0;
+            font-size: 14.5px;
             color: #555;
         }
 
         .email a {
-            color: #333;
+            color: #222;
             text-decoration: none;
             font-weight: 500;
+            border-bottom: 1px dotted #888;
+            transition: color 0.2s ease;
+        }
+
+        .email a:hover {
+            color: #000;
+            border-bottom-style: solid;
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13.5px;
+            color: #0a66c2;
+            background: rgba(10, 102, 194, 0.08);
+            padding: 7px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        .linkedin-link:hover {
+            background: rgba(10, 102, 194, 0.16);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(10, 102, 194, 0.15);
+        }
+
+        .linkedin-link svg {
+            flex-shrink: 0;
         }
 
         footer {
-            margin-top: 24px;
-            font-size: 14px;
-            color: #666;
+            margin-top: 22px;
+            font-size: 13.5px;
+            color: #6a6a6a;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 34px 22px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            p.description {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
@@ -129,18 +281,126 @@
     <div class="card">
         <h1>Epiderm</h1>
 
-        <p>
+        <p class="description">
             Skin cancer is curable when detected early. Epiderm brings clinical grade AI to your phone to detect lesions, identify patterns and predict stage in seconds with precision in every pixel.
         </p>
 
-        <button class="btn">App Coming Soon</button>
+        <!-- Hidden iframe for silent background submission to Google Forms -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){onGoogleFormSuccess();}"></iframe>
 
-        <p class="email">
-            Contact:
-            <a href="mailto:epiderm.org@gmail.com">epiderm.org@gmail.com</a>
-        </p>
+        <!-- Seamless In-Page Early Access Form -->
+        <form 
+            id="signup-form" 
+            class="signup-form" 
+            action="https://docs.google.com/forms/d/e/1FAIpQLSd3JMyDt54NtRfsKS1IyUo439t9kuuF3JksbpyTovfKX0ectQ/formResponse" 
+            method="POST" 
+            target="hidden_iframe"
+        >
+            <!-- Name Field (Optional) -->
+            <input 
+                type="text" 
+                id="name-input" 
+                name="entry.1329513645" 
+                class="signup-input" 
+                placeholder="Your Name (Optional)" 
+                autocomplete="name"
+            />
 
-        <footer>© 2025 Epiderm Health AI</footer>
+            <!-- Email Field (Required) -->
+            <input 
+                type="email" 
+                id="email-input" 
+                name="entry.220489884" 
+                class="signup-input" 
+                placeholder="Enter your email address..." 
+                required 
+                autocomplete="email"
+            />
+
+            <!-- Medical Professional Checkbox -->
+            <label class="checkbox-container">
+                <input type="checkbox" id="medical-checkbox">
+                <span>I am a medical professional</span>
+            </label>
+            <input type="hidden" name="entry.1915915379" id="medical-input" value="No">
+
+            <button type="submit" id="submit-btn" class="btn">
+                <span>Join Early Access</span>
+            </button>
+
+            <div id="form-feedback" class="feedback-msg"></div>
+        </form>
+
+        <div class="footer-links">
+            <p class="email">
+                Contact:
+                <a href="mailto:epiderm.org@gmail.com">epiderm.org@gmail.com</a>
+            </p>
+
+            <a 
+                href="https://www.linkedin.com/in/epiderm-org-459613418" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="linkedin-link" 
+                aria-label="Epiderm on LinkedIn"
+            >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/>
+                </svg>
+                <span>Follow on LinkedIn</span>
+            </a>
+        </div>
+
+        <footer>© <span id="year">2026</span> Epiderm Health AI</footer>
     </div>
+
+    <script>
+        // ==============================================================
+        // GOOGLE FORMS INTEGRATION
+        // Form: "Epiderm Pre signup"
+        // ==============================================================
+        const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3JMyDt54NtRfsKS1IyUo439t9kuuF3JksbpyTovfKX0ectQ/formResponse";
+        const GOOGLE_NAME_ENTRY_ID = "entry.1329513645";
+        const GOOGLE_EMAIL_ENTRY_ID = "entry.220489884";
+        const GOOGLE_MEDICAL_ENTRY_ID = "entry.1915915379";
+
+        let submitted = false;
+        const form = document.getElementById('signup-form');
+        const nameInput = document.getElementById('name-input');
+        const emailInput = document.getElementById('email-input');
+        const medicalCheckbox = document.getElementById('medical-checkbox');
+        const medicalInput = document.getElementById('medical-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const feedback = document.getElementById('form-feedback');
+
+        // Toggle Medical Professional value between "Yes" and "No"
+        medicalCheckbox.addEventListener('change', function() {
+            medicalInput.value = this.checked ? "Yes" : "No";
+        });
+
+        // Auto-update footer copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        form.addEventListener('submit', function(e) {
+            submitted = true;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = "<span>Joining...</span>";
+            feedback.style.display = "none";
+        });
+
+        function onGoogleFormSuccess() {
+            submitBtn.innerHTML = "<span>✓ Joined Early Access</span>";
+            submitBtn.style.background = "#14532d";
+            submitBtn.disabled = true;
+            nameInput.disabled = true;
+            emailInput.disabled = true;
+            medicalCheckbox.disabled = true;
+            nameInput.style.opacity = "0.7";
+            emailInput.style.opacity = "0.7";
+            feedback.className = "feedback-msg success";
+            feedback.innerHTML = "✓ You're on the list! We'll notify you as soon as we launch.";
+            feedback.style.display = "block";
+        }
+    </script>
 </body>
 </html>
